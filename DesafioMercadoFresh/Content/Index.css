@@ -1,0 +1,28 @@
+﻿#mainContent {
+    height: 500px;
+}
+
+.pane {
+    /*width: 80% !important;
+    height: 90% !important;*/
+}
+
+.ulPane {
+}
+
+#tinderslide {
+    width: 55%;
+    height: 60%;
+    margin-left: 20%;
+    overflow: hidden;
+}
+
+.observations {
+    font-size: 15px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.quantity {
+    font-weight: bold;
+}

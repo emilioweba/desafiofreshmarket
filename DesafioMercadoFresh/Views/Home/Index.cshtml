@@ -1,0 +1,31 @@
+﻿@model  IEnumerable<DesafioMercadoFresh.Models.IndexViewModel>
+
+<div id="tinderslide">
+    <ul class="ulPane">
+        @foreach (var order in Model)
+        {
+            <li class="pane">
+                @Html.Hidden("productId", order.ProductId)
+
+                @Html.Hidden("observations", order.Observations)
+
+                <img src="data:image;base64,@System.Convert.ToBase64String(order.ProductImage)" />
+                <div>@order.ProductName</div>
+                <div class="quantity">@order.TotalQuantity @order.QntyUnity</div>
+                <br />
+                <div class="observations">@order.Observations</div>
+                <div class="like"></div>
+                <div class="dislike"></div>
+            </li>
+        }
+    </ul>
+</div>
+
+<div class="actions">
+    <a href="#" class="dislike"><i></i></a>
+    <a href="#" class="like"><i></i></a>
+</div>
+
+<!-- jTinder status text  -->
+<div id="status"></div>
+<link rel="stylesheet" type="text/css" href="~/Content/Index.css">

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    @Styles.Render("~/Content/mobileCss", "~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" type="text/css" href="~/Content/jTinder.css">
+</head>
+<body>
+    <div data-role="page" data-theme="a" id="mainPage">
+        <div data-role="header">
+            <a id="bars-button" data-icon="bars" data-iconpos="notext" href="#navpanel" data-iconshadow="false" data-shadow="false"></a> @*This is the navigation button*@
+            <h1>@ViewBag.Title</h1>
+        </div>
+        <div data-role="panel" id="navpanel" data-display="reveal" data-theme="b"> @*This is the navigation panel hidden at the left*@
+            <ul data-role="listview">
+                <li data-icon="delete"><a href="#" data-rel="close">Fechar menu</a></li>
+                <li><a id="hrefHome">Home</a></li>
+                <li><a id="hrefPicked">Confirmar Picked</a></li>
+                <li><a id="hrefNotFound">Confirmar Not_Found</a></li>
+                <li><a id="resetWaitingForPickup" href="#">Reset to Waiting_For_Picking</a></li>
+            </ul>
+        </div>
+        <div id="mainContent" data-role="content"> @*Here is where the main content it is*@
+            @RenderBody()
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    <script>
+        $(document).on("mobileinit", function () {
+            $.mobile.ajaxEnabled = false;
+        });
+    </script>
+    @Scripts.Render("~/bundles/jquerymobile")
+    @RenderSection("scripts", required: false)
+    <!-- jQuery lib -->
+    <script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
+
+    <!-- transform2d lib -->
+    <script type="text/javascript" src="~/Scripts/jquery.transform2d.js"></script>
+
+    <!-- jTinder lib -->
+    <script type="text/javascript" src="~/Scripts/jquery.jTinder.js"></script>
+
+    <!-- jTinder initialization script -->
+    <script type="text/javascript" src="~/Scripts/main.js"></script>
+
+</body>
+</html>

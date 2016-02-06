@@ -1,0 +1,78 @@
+﻿#divMarkText {
+    float: left;
+}
+
+#divToogleAll {
+    float: left;
+    display: inline;
+}
+
+body {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+#mainPage {
+    height: 100% !important;
+}
+
+.ui-panel-wrapper {
+    height: 75% !important;
+}
+
+#mainContent {
+    height: 85%;
+}
+
+#controlGroup {
+    height: 50%;
+    overflow: scroll;
+}
+
+#confirmPicked, #confirmNotFound {
+    margin-left: 10%;
+    cursor: pointer;
+}
+
+#divPicked, #divNotFound {
+    float: left;
+    width: 49%;
+    margin-right: 1%;
+}
+
+#divButtons {
+    float: left;
+    margin-top: 3%;
+    width: 50%;
+    margin-left: 20%;
+}
+
+#divMessage {
+    margin-top: 10%;
+    margin-left: 40%;
+}
+
+#message {
+    color: red;
+}
+
+#contentWrapper.loading .modal {
+    display: block;
+}
+
+#contentWrapper {
+    width: 100%;
+    margin: auto;
+    height: 100%;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba( 255, 255, 255, .8 ) url('images/load.gif') 50% 50% no-repeat;
+}

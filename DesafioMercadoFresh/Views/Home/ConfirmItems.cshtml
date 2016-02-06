@@ -1,0 +1,56 @@
+﻿@model  IEnumerable<DesafioMercadoFresh.Models.IndexViewModel>
+@{
+    ViewBag.Title = "Confirmar Itens";
+}
+
+<div id="contentWrapper">
+    <div id="divMarkText">
+        <span>Marque para selecionar todos:</span>
+    </div>
+    <div id="divToogleAll">
+        <input type="checkbox" name="checkboxToogleAll" id="checkboxToogleAll" data-theme="a">
+    </div>
+
+    <br />
+
+    @Html.Hidden("status", TempData["Status"])
+
+    <div data-role="controlgroup" id="controlGroup">
+        @{int nameCount = 1;}
+        @foreach (var item in Model) // Here all products are being listed 
+        {
+            <div class="checkBoxWrap">
+                <div class="infos">
+                    @Html.Hidden("productId", item.ProductId)
+                    @Html.Hidden("obs", item.Observations)
+                </div>
+                <input type="checkbox" name="checkboxItem_@nameCount" id="checkboxItem_@nameCount" data-theme="a">
+                <label for="checkboxItem_@nameCount">
+                    @item.ProductName
+                    @if (item.Observations.Length > 0)
+                    {
+                        <span>- @item.Observations</span>
+                    }
+                </label>
+            </div>
+                    nameCount++;
+        }
+    </div>
+
+    <div id="divButtons">
+        <div id="divPicked">
+            <button id="confirmPicked"></button>
+        </div>
+        <div id="divNotFound">
+            <button id="confirmNotFound"></button>
+        </div>
+    </div>
+
+    <div id="divMessage"><span id="message"></span></div>
+    <div class="modal"> </div>
+</div>
+
+<link href="~/Content/ConfirmItems.css" rel="stylesheet" />
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jquerymobile")
+<script src="~/Scripts/ConfirmItems.js"></script>
